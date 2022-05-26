@@ -29,4 +29,9 @@ class FlutterRcAudioPlugin {
     if (Platform.isIOS) return Future.value("ok");
     return await _channel.invokeMethod("resetAudioRouteing");
   }
+
+  static Future<int> isHeadSetOn() async {
+    if (Platform.isIOS) return Future.value(0);
+    return await _channel.invokeMethod("isHeadSetOn");
+  }
 }
