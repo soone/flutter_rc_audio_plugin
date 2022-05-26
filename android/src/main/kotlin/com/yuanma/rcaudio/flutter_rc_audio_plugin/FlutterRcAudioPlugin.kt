@@ -1,6 +1,7 @@
 package com.yuanma.rcaudio.flutter_rc_audio_plugin
 
 import androidx.annotation.NonNull
+import cn.rongcloud.rtc.api.RCRTCAudioRouteManager
 import cn.rongcloud.rtc.wrapper.constants.RCRTCIWAudioDeviceType
 import cn.rongcloud.rtc.wrapper.flutter.RCRTCEngineWrapper
 import cn.rongcloud.rtc.wrapper.listener.IRCRTCIWAudioRouteingListener
@@ -42,6 +43,9 @@ class FlutterRcAudioPlugin : FlutterPlugin, MethodCallHandler {
                 resetAudioRouteing()
                 result.success("ok")
             }
+            "isHeadSetOn" -> {
+                result.success(isHeadSetOn())
+            }
             else -> {
                 result.notImplemented()
             }
@@ -56,6 +60,18 @@ class FlutterRcAudioPlugin : FlutterPlugin, MethodCallHandler {
         if (audioRouteingListener == null) audioRouteingListener = AudioRouteingListener()
 
         RCRTCEngineWrapper.getInstance().startAudioRouteing(audioRouteingListener)
+    }
+
+    private fun isHeadSetOn() : Int {
+        if (RCRTCAudioRouteManager.getInstance().hasInit()) {
+            if (RCRTCAudioRouteManager.getInstance().hasHeadSet() || RCRTCAudioRouteManager.getInstance().hasBluetoothA2dpConnected()) {
+                return 1
+            }
+
+            return 0
+        }
+
+        return -1
     }
 
     private fun stopAudioRouteing() {
