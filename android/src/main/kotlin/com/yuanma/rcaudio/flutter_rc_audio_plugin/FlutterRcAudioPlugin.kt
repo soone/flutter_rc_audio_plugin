@@ -1,5 +1,6 @@
 package com.yuanma.rcaudio.flutter_rc_audio_plugin
 
+import android.util.Log
 import androidx.annotation.NonNull
 import cn.rongcloud.rtc.api.RCRTCAudioRouteManager
 import cn.rongcloud.rtc.wrapper.constants.RCRTCIWAudioDeviceType
@@ -57,7 +58,10 @@ class FlutterRcAudioPlugin : FlutterPlugin, MethodCallHandler {
     }
 
     private fun startAudioRouteing() {
-        if (audioRouteingListener == null) audioRouteingListener = AudioRouteingListener()
+        if (audioRouteingListener == null) audioRouteingListener = AudioRouteingListener(fun(p0: Int) {
+            Log.e("audioRouteStatus", p0.toString())
+            channel.invokeMethod("audioRouteStatus", p0)
+        })
 
         RCRTCEngineWrapper.getInstance().startAudioRouteing(audioRouteingListener)
     }
