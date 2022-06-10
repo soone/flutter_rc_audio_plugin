@@ -75,7 +75,7 @@ packages:
       path: ".."
       relative: true
     source: path
-    version: "0.0.1"
+    version: "0.0.2"
   flutter_test:
     dependency: "direct dev"
     description: flutter
@@ -122,14 +122,16 @@ packages:
       name: rongcloud_im_plugin
       url: "https://pub.flutter-io.cn"
     source: hosted
-    version: "5.1.8+2"
+    version: "5.1.8+4"
   rongcloud_rtc_wrapper_plugin:
     dependency: transitive
     description:
-      name: rongcloud_rtc_wrapper_plugin
-      url: "https://pub.flutter-io.cn"
-    source: hosted
-    version: "5.1.5+4"
+      path: "."
+      ref: "v5.2.3"
+      resolved-ref: "34c0abac49150f9ce7a22c3d13802337fd243e00"
+      url: "git@github.com:soone/rtc-flutter-wrapper.git"
+    source: git
+    version: "5.1.5+5"
   sky_engine:
     dependency: transitive
     description: flutter
