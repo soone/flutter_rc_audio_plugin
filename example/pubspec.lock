@@ -75,7 +75,7 @@ packages:
       path: ".."
       relative: true
     source: path
-    version: "0.0.2+1"
+    version: "0.0.2+5"
   flutter_test:
     dependency: "direct dev"
     description: flutter
@@ -122,16 +122,16 @@ packages:
       name: rongcloud_im_plugin
       url: "https://pub.flutter-io.cn"
     source: hosted
-    version: "5.1.8+4"
+    version: "5.1.8+6"
   rongcloud_rtc_wrapper_plugin:
     dependency: transitive
     description:
       path: "."
-      ref: "tag_5.2.3"
-      resolved-ref: c171ddf380179b87bb00cf2cf21604fc866dd992
+      ref: "ym_sound_5.2.3"
+      resolved-ref: "0c36f4454ef886908a951aedc687a10b22d09f65"
       url: "git@github.com:soone/rtc-flutter-wrapper.git"
     source: git
-    version: "5.1.5+5"
+    version: "5.1.5+6"
   sky_engine:
     dependency: transitive
     description: flutter
