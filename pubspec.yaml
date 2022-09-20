@@ -1,6 +1,6 @@
 name: flutter_rc_audio_plugin
 description: A new flutter plugin project.
-version: 0.0.2+39
+version: 0.0.2+40
 homepage:
 
 environment:
@@ -16,7 +16,7 @@ dependencies:
       # url: git@github.com:soone/rtc-flutter-wrapper.git
       # ref: ym_sound_5.2.3+116.2.103
       url: git@ymcode.weineimu.com:soone/rtc-flutter-wrapper.git
-      ref: ym_sound_5.2.3+1201.1040
+      ref: ym_sound_5.2.3+1140.1040
 
 dev_dependencies:
   flutter_test:
