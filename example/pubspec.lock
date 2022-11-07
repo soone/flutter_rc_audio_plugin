@@ -68,7 +68,7 @@ packages:
       path: ".."
       relative: true
     source: path
-    version: "0.0.3+58"
+    version: "0.0.3+59"
   flutter_test:
     dependency: "direct dev"
     description: flutter
@@ -122,8 +122,8 @@ packages:
     dependency: transitive
     description:
       path: "."
-      ref: "ym_sound_im_5.2.5.1_ios_5.2.5.3_6_android_124"
-      resolved-ref: e7f24cb76b66faeb59a1475a6b7a2a9596f83559
+      ref: "ym_sound_im_5.2.5.1_ios_5.2.5.3_7_android_124"
+      resolved-ref: "7f238b4612618ea61f9dee81e0f3a2cdb25f674d"
       url: "git@ymcode.weineimu.com:soone/rtc-flutter-wrapper.git"
     source: git
     version: "5.1.5+7"
