@@ -24,6 +24,7 @@ class AudioRouteingListener(var handlerFunc: ((Int) -> Unit)?) : IRCRTCIWAudioRo
                     // 有线耳机
                     handlerFunc!!(3)
                 }
+                else ->  handlerFunc!!(1)
             }
         }
     }
