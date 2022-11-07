@@ -7,7 +7,7 @@ packages:
       name: async
       url: "https://pub.flutter-io.cn"
     source: hosted
-    version: "2.8.2"
+    version: "2.9.0"
   boolean_selector:
     dependency: transitive
     description:
@@ -21,28 +21,21 @@ packages:
       name: characters
       url: "https://pub.flutter-io.cn"
     source: hosted
-    version: "1.2.0"
-  charcode:
-    dependency: transitive
-    description:
-      name: charcode
-      url: "https://pub.flutter-io.cn"
-    source: hosted
-    version: "1.3.1"
+    version: "1.2.1"
   clock:
     dependency: transitive
     description:
       name: clock
       url: "https://pub.flutter-io.cn"
     source: hosted
-    version: "1.1.0"
+    version: "1.1.1"
   collection:
     dependency: transitive
     description:
       name: collection
       url: "https://pub.flutter-io.cn"
     source: hosted
-    version: "1.15.0"
+    version: "1.16.0"
   cupertino_icons:
     dependency: "direct main"
     description:
@@ -56,7 +49,7 @@ packages:
       name: fake_async
       url: "https://pub.flutter-io.cn"
     source: hosted
-    version: "1.2.0"
+    version: "1.3.1"
   flutter:
     dependency: "direct main"
     description: flutter
@@ -75,7 +68,7 @@ packages:
       path: ".."
       relative: true
     source: path
-    version: "0.0.2+5"
+    version: "0.0.3+58"
   flutter_test:
     dependency: "direct dev"
     description: flutter
@@ -94,44 +87,46 @@ packages:
       name: matcher
       url: "https://pub.flutter-io.cn"
     source: hosted
-    version: "0.12.11"
+    version: "0.12.12"
   material_color_utilities:
     dependency: transitive
     description:
       name: material_color_utilities
       url: "https://pub.flutter-io.cn"
     source: hosted
-    version: "0.1.3"
+    version: "0.1.5"
   meta:
     dependency: transitive
     description:
       name: meta
       url: "https://pub.flutter-io.cn"
     source: hosted
-    version: "1.7.0"
+    version: "1.8.0"
   path:
     dependency: transitive
     description:
       name: path
       url: "https://pub.flutter-io.cn"
     source: hosted
-    version: "1.8.0"
+    version: "1.8.2"
   rongcloud_im_plugin:
     dependency: transitive
     description:
-      name: rongcloud_im_plugin
-      url: "https://pub.flutter-io.cn"
-    source: hosted
-    version: "5.1.8+6"
+      path: "."
+      ref: "ym_im_5.1.8+7_ios_5.2.5.1_android_5.2.5.101"
+      resolved-ref: "0d5291c6879e9ca78905c1c490b115e02f5d7190"
+      url: "git@github.com:soone/rongcloud-im-flutter-sdk.git"
+    source: git
+    version: "5.1.8+7"
   rongcloud_rtc_wrapper_plugin:
     dependency: transitive
     description:
       path: "."
-      ref: "ym_sound_5.2.3"
-      resolved-ref: "0c36f4454ef886908a951aedc687a10b22d09f65"
-      url: "git@github.com:soone/rtc-flutter-wrapper.git"
+      ref: "ym_sound_im_5.2.5.1_ios_5.2.5.3_6_android_124"
+      resolved-ref: e7f24cb76b66faeb59a1475a6b7a2a9596f83559
+      url: "git@ymcode.weineimu.com:soone/rtc-flutter-wrapper.git"
     source: git
-    version: "5.1.5+6"
+    version: "5.1.5+7"
   sky_engine:
     dependency: transitive
     description: flutter
@@ -143,7 +138,7 @@ packages:
       name: source_span
       url: "https://pub.flutter-io.cn"
     source: hosted
-    version: "1.8.1"
+    version: "1.9.0"
   stack_trace:
     dependency: transitive
     description:
@@ -164,35 +159,28 @@ packages:
       name: string_scanner
       url: "https://pub.flutter-io.cn"
     source: hosted
-    version: "1.1.0"
+    version: "1.1.1"
   term_glyph:
     dependency: transitive
     description:
       name: term_glyph
       url: "https://pub.flutter-io.cn"
     source: hosted
-    version: "1.2.0"
+    version: "1.2.1"
   test_api:
     dependency: transitive
     description:
       name: test_api
       url: "https://pub.flutter-io.cn"
     source: hosted
-    version: "0.4.8"
-  typed_data:
-    dependency: transitive
-    description:
-      name: typed_data
-      url: "https://pub.flutter-io.cn"
-    source: hosted
-    version: "1.3.0"
+    version: "0.4.12"
   vector_math:
     dependency: transitive
     description:
       name: vector_math
       url: "https://pub.flutter-io.cn"
     source: hosted
-    version: "2.1.1"
+    version: "2.1.2"
 sdks:
-  dart: ">=2.16.2 <3.0.0"
+  dart: ">=2.17.0-0 <3.0.0"
   flutter: ">=2.5.0"
