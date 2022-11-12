@@ -3,10 +3,11 @@ package com.yuanma.rcaudio.flutter_rc_audio_plugin
 import android.util.Log
 import androidx.annotation.NonNull
 import cn.rongcloud.rtc.api.RCRTCAudioRouteManager
-import cn.rongcloud.rtc.wrapper.constants.RCRTCIWAudioDeviceType
+import cn.rongcloud.rtc.wrapper.constants.RCRTCIWAudioDeviceErrorType
+import cn.rongcloud.rtc.wrapper.constants.RCRTCIWVideoDeviceErrorType
 import cn.rongcloud.rtc.wrapper.flutter.RCRTCEngineWrapper
 import cn.rongcloud.rtc.wrapper.listener.IRCRTCIWAudioRouteingListener
-
+import cn.rongcloud.rtc.wrapper.listener.IRCRTCIWLocalDeviceErrorListener
 import io.flutter.embedding.engine.plugins.FlutterPlugin
 import io.flutter.plugin.common.MethodCall
 import io.flutter.plugin.common.MethodChannel
@@ -33,6 +34,7 @@ class FlutterRcAudioPlugin : FlutterPlugin, MethodCallHandler {
                 result.success("Android ${android.os.Build.VERSION.RELEASE}")
             }
             "startAudioRouteing" -> {
+                setLocalDeviceErrorListener();
                 startAudioRouteing()
                 result.success("ok")
             }
@@ -55,6 +57,19 @@ class FlutterRcAudioPlugin : FlutterPlugin, MethodCallHandler {
 
     override fun onDetachedFromEngine(@NonNull binding: FlutterPlugin.FlutterPluginBinding) {
         channel.setMethodCallHandler(null)
+    }
+
+    private fun setLocalDeviceErrorListener(): Int {
+        return RCRTCEngineWrapper.getInstance()
+            .setLocalDeviceErrorListener(object : IRCRTCIWLocalDeviceErrorListener {
+                override fun onAudioDeviceError(type: RCRTCIWAudioDeviceErrorType?) {
+                    channel.invokeMethod("localAudioDeviceError", type)
+                }
+
+                override fun onVideoDeviceError(type: RCRTCIWVideoDeviceErrorType?) {
+                    channel.invokeMethod("localVideoDeviceError", type)
+                }
+            })
     }
 
     private fun startAudioRouteing() {
