@@ -68,7 +68,7 @@ packages:
       path: ".."
       relative: true
     source: path
-    version: "0.0.3+60"
+    version: "0.0.3+71"
   flutter_test:
     dependency: "direct dev"
     description: flutter
@@ -113,8 +113,8 @@ packages:
     dependency: transitive
     description:
       path: "."
-      ref: "ym_im_5.1.8+7_ios_5.2.5.1_android_5.2.5.101"
-      resolved-ref: "0d5291c6879e9ca78905c1c490b115e02f5d7190"
+      ref: "ym_im_5.3.0+1_ios_5.3.0_android_5.3.0.1"
+      resolved-ref: bbbb6c46efba40535a64b04017327ae0f1903509
       url: "git@github.com:soone/rongcloud-im-flutter-sdk.git"
     source: git
     version: "5.1.8+7"
@@ -122,8 +122,8 @@ packages:
     dependency: transitive
     description:
       path: "."
-      ref: "ym_sound_im_5.2.5.1_ios_5.2.5.3_8_android_124"
-      resolved-ref: be0535a3267f90f2bb3376728ce9279b69c545fb
+      ref: "ym_sound_im_5.3.0_ios_5.3.0_android_5.3.0_3"
+      resolved-ref: "2420f087f98cd800638c20730150fda788d8f249"
       url: "git@ymcode.weineimu.com:soone/rtc-flutter-wrapper.git"
     source: git
     version: "5.1.5+7"
