@@ -63,17 +63,17 @@ class FlutterRcAudioPlugin : FlutterPlugin, MethodCallHandler {
         return RCRTCEngineWrapper.getInstance()
             .setLocalDeviceErrorListener(object : IRCRTCIWLocalDeviceErrorListener {
                 override fun onAudioDeviceError(type: RCRTCIWAudioDeviceErrorType?) {
-                    Log.e("audioRouteStatus",type)
-                    int typeInt = type.ordinal();
-                    Log.e("audioRouteStatustypeInt",typeInt)
-                    channel.invokeMethod("localAudioDeviceError", typeInt)
+                    Log.e("audioRouteStatus",type.toString())
+                    // var typeInt:Int = type.ordinal()
+                    // Log.e("audioRouteStatustypeInt",typeInt.toString())
+                    // channel.invokeMethod("localAudioDeviceError", typeInt)
                 }
 
                 override fun onVideoDeviceError(type: RCRTCIWVideoDeviceErrorType?) {
-                    Log.e("audioRouteStatus",type)
-                    int typeInt = type.ordinal();
-                    Log.e("audioRouteStatustypeInt",type)
-                    channel.invokeMethod("localVideoDeviceError", typeInt)
+                    Log.e("audioRouteStatus",type.toString())
+                    // var typeInt:Int = type.ordinal()
+                    // Log.e("audioRouteStatustypeInt",typeInt.toString())
+                    // channel.invokeMethod("localVideoDeviceError", typeInt)
                 }
             })
     }
