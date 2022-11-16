@@ -117,11 +117,14 @@ class FlutterRcAudioPlugin : FlutterPlugin, MethodCallHandler, ActivityAware {
     }
 
     override fun onDetachedFromActivityForConfigChanges() {
+        activity = null
     }
 
     override fun onReattachedToActivityForConfigChanges(binding: ActivityPluginBinding) {
+        activity = binding.activity as FlutterActivity
     }
 
     override fun onDetachedFromActivity() {
+        activity = null
     }
 }
