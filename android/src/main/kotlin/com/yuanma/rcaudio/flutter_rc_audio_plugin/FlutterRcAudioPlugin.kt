@@ -1,5 +1,6 @@
 package com.yuanma.rcaudio.flutter_rc_audio_plugin
 
+import android.app.Activity
 import android.util.Log
 import androidx.annotation.NonNull
 import cn.rongcloud.rtc.api.RCRTCAudioRouteManager
@@ -8,20 +9,25 @@ import cn.rongcloud.rtc.wrapper.constants.RCRTCIWVideoDeviceErrorType
 import cn.rongcloud.rtc.wrapper.flutter.RCRTCEngineWrapper
 import cn.rongcloud.rtc.wrapper.listener.IRCRTCIWAudioRouteingListener
 import cn.rongcloud.rtc.wrapper.listener.IRCRTCIWLocalDeviceErrorListener
+import io.flutter.embedding.android.FlutterActivity
 import io.flutter.embedding.engine.plugins.FlutterPlugin
+import io.flutter.embedding.engine.plugins.activity.ActivityAware
+import io.flutter.embedding.engine.plugins.activity.ActivityPluginBinding
 import io.flutter.plugin.common.MethodCall
 import io.flutter.plugin.common.MethodChannel
 import io.flutter.plugin.common.MethodChannel.MethodCallHandler
 import io.flutter.plugin.common.MethodChannel.Result
+import java.lang.ref.WeakReference
 
 /** FlutterRcAudioPlugin */
-class FlutterRcAudioPlugin : FlutterPlugin, MethodCallHandler {
+class FlutterRcAudioPlugin : FlutterPlugin, MethodCallHandler, ActivityAware {
     /// The MethodChannel that will the communication between Flutter and native Android
     ///
     /// This local reference serves to register the plugin with the Flutter Engine and unregister it
     /// when the Flutter Engine is detached from the Activity
     private lateinit var channel: MethodChannel
     private var audioRouteingListener: IRCRTCIWAudioRouteingListener? = null
+    private var activity: FlutterActivity? = null
 
     override fun onAttachedToEngine(@NonNull flutterPluginBinding: FlutterPlugin.FlutterPluginBinding) {
         channel = MethodChannel(flutterPluginBinding.binaryMessenger, "flutter_rc_audio_plugin")
@@ -60,20 +66,18 @@ class FlutterRcAudioPlugin : FlutterPlugin, MethodCallHandler {
     }
 
     private fun setLocalDeviceErrorListener(): Int {
-        return RCRTCEngineWrapper.getInstance()
+        return  RCRTCEngineWrapper.getInstance()
             .setLocalDeviceErrorListener(object : IRCRTCIWLocalDeviceErrorListener {
                 override fun onAudioDeviceError(type: RCRTCIWAudioDeviceErrorType?) {
-                    // Log.e("localAudioDeviceError1",type.toString())
-                    // var typeInt:Int = type.ordinal
-                    // Log.e("audioRouteStatustypeInt",typeInt.toString())
-                    channel.invokeMethod("localAudioDeviceError", type?.ordinal)
+                    activity?.runOnUiThread {
+                        channel.invokeMethod("localAudioDeviceError", type?.ordinal)
+                    }
                 }
 
                 override fun onVideoDeviceError(type: RCRTCIWVideoDeviceErrorType?) {
-                    // Log.e("localAudioDeviceError2",type.toString())
-                    // var typeInt:Int = type.ordinal()
-                    // Log.e("audioRouteStatustypeInt",typeInt.toString())
-                    channel.invokeMethod("localVideoDeviceError", type?.ordinal)
+                    activity?.runOnUiThread {
+                        channel.invokeMethod("localVideoDeviceError", type?.ordinal)
+                    }
                 }
             })
     }
@@ -106,5 +110,18 @@ class FlutterRcAudioPlugin : FlutterPlugin, MethodCallHandler {
 
     private fun resetAudioRouteing() {
         RCRTCEngineWrapper.getInstance().resetAudioRouteingState()
+    }
+
+    override fun onAttachedToActivity(binding: ActivityPluginBinding) {
+        activity = binding.activity as FlutterActivity
+    }
+
+    override fun onDetachedFromActivityForConfigChanges() {
+    }
+
+    override fun onReattachedToActivityForConfigChanges(binding: ActivityPluginBinding) {
+    }
+
+    override fun onDetachedFromActivity() {
     }
 }
