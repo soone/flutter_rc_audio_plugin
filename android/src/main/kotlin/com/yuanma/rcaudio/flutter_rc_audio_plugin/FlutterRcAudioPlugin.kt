@@ -70,12 +70,14 @@ class FlutterRcAudioPlugin : FlutterPlugin, MethodCallHandler, ActivityAware {
             .setLocalDeviceErrorListener(object : IRCRTCIWLocalDeviceErrorListener {
                 override fun onAudioDeviceError(type: RCRTCIWAudioDeviceErrorType?) {
                     activity?.runOnUiThread {
+                        Log.e("=======setLocalDeviceErrorListener1", type?.toString())
                         channel.invokeMethod("localAudioDeviceError", type?.ordinal)
                     }
                 }
 
                 override fun onVideoDeviceError(type: RCRTCIWVideoDeviceErrorType?) {
                     activity?.runOnUiThread {
+                        Log.e("=======setLocalDeviceErrorListener2", type?.toString())
                         channel.invokeMethod("localVideoDeviceError", type?.ordinal)
                     }
                 }
