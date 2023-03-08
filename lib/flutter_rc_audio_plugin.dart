@@ -34,4 +34,10 @@ class FlutterRcAudioPlugin {
     if (Platform.isIOS) return Future.value(0);
     return await _channel.invokeMethod("isHeadSetOn");
   }
+
+  static Future<int> setImKey(String key) async {
+    if (Platform.isIOS) return Future.value(0);
+    Map<String, dynamic> arguments = {'key': key};
+    return await _channel.invokeMethod("setImKey", arguments);
+  }
 }
