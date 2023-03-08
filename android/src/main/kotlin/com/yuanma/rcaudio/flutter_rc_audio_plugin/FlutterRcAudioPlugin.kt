@@ -57,7 +57,7 @@ class FlutterRcAudioPlugin : FlutterPlugin, MethodCallHandler, ActivityAware {
                 result.success(isHeadSetOn())
             }
             "setImKey" -> {
-                var key:String = call.argument("key");
+                var key:String? = call.argument("key");
                 RongCoreClient.getInstance().switchAppKey(key)
             }
             else -> {
