@@ -76,7 +76,7 @@ packages:
       path: ".."
       relative: true
     source: path
-    version: "0.0.3+122"
+    version: "0.0.3+123"
   flutter_test:
     dependency: "direct dev"
     description: flutter
@@ -130,24 +130,30 @@ packages:
       url: "https://pub.flutter-io.cn"
     source: hosted
     version: "1.8.2"
-  rongcloud_im_plugin:
+  plugin_platform_interface:
     dependency: transitive
     description:
-      path: "."
-      ref: "ym_im_5.3.2_ios_5.3.2_android_5.3.2"
-      resolved-ref: "395a5abbbb0a0d930a54ef29f027ab8856cdd823"
-      url: "git@github.com:soone/rongcloud-im-flutter-sdk.git"
-    source: git
-    version: "5.1.8+7"
+      name: plugin_platform_interface
+      sha256: "6a2128648c854906c53fa8e33986fc0247a1116122f9534dd20e3ab9e16a32bc"
+      url: "https://pub.flutter-io.cn"
+    source: hosted
+    version: "2.1.4"
+  rongcloud_im_wrapper_plugin:
+    dependency: transitive
+    description:
+      name: rongcloud_im_wrapper_plugin
+      sha256: "3c7aff333ff4f5a524af1bedd5e3a241248707109748b13d09d206c0bc9d5af9"
+      url: "https://pub.flutter-io.cn"
+    source: hosted
+    version: "5.3.3"
   rongcloud_rtc_wrapper_plugin:
     dependency: transitive
     description:
-      path: "."
-      ref: "ym_sound_im_5.3.2_ios_5.3.2.1_android_5.3.2.5_ios_fix_2"
-      resolved-ref: "404da24764a0e4416235086405fe4dc6c05d53d0"
-      url: "git@ymcode.weineimu.com:soone/rtc-flutter-wrapper.git"
-    source: git
-    version: "5.1.5+7"
+      name: rongcloud_rtc_wrapper_plugin
+      sha256: "6c120cdb9ad99aa9583bada89b1f6bf86cb0c93b154bd9e9e2f71160d60d15c6"
+      url: "https://pub.flutter-io.cn"
+    source: hosted
+    version: "5.3.3"
   sky_engine:
     dependency: transitive
     description: flutter
