@@ -76,9 +76,14 @@ packages:
       path: ".."
       relative: true
     source: path
-    version: "0.0.3+124"
+    version: "0.0.3+125"
   flutter_test:
     dependency: "direct dev"
+    description: flutter
+    source: sdk
+    version: "0.0.0"
+  flutter_web_plugins:
+    dependency: transitive
     description: flutter
     source: sdk
     version: "0.0.0"
@@ -142,19 +147,18 @@ packages:
     dependency: transitive
     description:
       name: rongcloud_im_wrapper_plugin
-      sha256: "3c7aff333ff4f5a524af1bedd5e3a241248707109748b13d09d206c0bc9d5af9"
+      sha256: "55864b89f1f56870994396e4bfadf184e6b63c435b57ee78a3f39930458fe4f2"
       url: "https://pub.flutter-io.cn"
     source: hosted
-    version: "5.3.3"
+    version: "5.4.0"
   rongcloud_rtc_wrapper_plugin:
     dependency: transitive
     description:
-      path: "."
-      ref: "tag_5.3.3_1"
-      resolved-ref: aa4e9500cd92b9b9f8a78c56bf7353361bee7ca5
-      url: "git@ymcode.weineimu.com:kuolie/rongcloud_rtc_wrapper_plugin.git"
-    source: git
-    version: "5.3.3"
+      name: rongcloud_rtc_wrapper_plugin
+      sha256: "3867ad6766c7006c8858822afdeb0663ddfc548f7d74c11cc5736fc97d35ed24"
+      url: "https://pub.flutter-io.cn"
+    source: hosted
+    version: "5.4.0"
   sky_engine:
     dependency: transitive
     description: flutter
